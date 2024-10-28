@@ -7,4 +7,4 @@ ogImage: https://user-images.githubusercontent.com/53733092/215771435-25408246-2
 description: Testing.
 ---
 
-Astro 2.0 has been released with some cool features, breaking changes, DX improvements, better error overlay and so on. AstroPaper takes advantage of those cool features, especially Content Collections API.
+Welcome to my blog. It is under construction for now)
