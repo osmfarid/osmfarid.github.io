@@ -6,7 +6,7 @@ import Footer from "@components/Footer.astro";
 import LinkButton from "@components/LinkButton.astro";
 import Hr from "@components/Hr.astro";
 import Card from "@components/Card";
-import Socials from "@components/Socials.astro";
+// import Socials from "@components/Socials.astro";
 import getSortedPosts from "@utils/getSortedPosts";
 import { SITE, SOCIALS } from "@config";
 
@@ -16,7 +16,7 @@ const sortedPosts = getSortedPosts(posts);
 const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
-const socialCount = SOCIALS.filter(social => social.active).length;
+// const socialCount = SOCIALS.filter(social => social.active).length;
 ---
 
 <Layout>
@@ -47,7 +47,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         out of the box. Light and dark mode are supported by default. Moreover,
         additional color schemes can also be configured.
       </p>
-      <p>
+      <!-- <p>
         Read the blog posts or check
         <LinkButton
           className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
@@ -55,8 +55,8 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         >
           README
         </LinkButton> for more info.
-      </p>
-      {
+      </p> -->
+      <!-- {
         // only display if at least one social link is enabled
         socialCount > 0 && (
           <div class="social-wrapper">
@@ -64,7 +64,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
             <Socials />
           </div>
         )
-      }
+      } -->
     </section>
 
     <Hr />
