@@ -1,9 +1,9 @@
 import type { Favicon, Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
-  website: "https://astro-paper.pages.dev/", // replace this with your deployed domain
+  website: "https://osmfarid.github.io//", // replace this with your deployed domain
   author: "Osmanli Farid",
-  profile: "https://satnaing.dev/",
+  profile: "https://github.com/osmfarid/",
   desc: "My Angular developers notebook",
   title: "osmfarid's blog",
   ogImage: "astropaper-og.jpg",
