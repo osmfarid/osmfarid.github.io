@@ -1,4 +1,4 @@
-import type { Site, SocialObjects } from "./types";
+import type { Favicon, Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
   website: "https://astro-paper.pages.dev/", // replace this with your deployed domain
@@ -12,11 +12,6 @@ export const SITE: Site = {
   postPerPage: 5,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
   showArchives: false,
-  editPost: {
-    url: "https://github.com/satnaing/astro-paper/edit/main/src/content/blog",
-    text: "Suggest Changes",
-    appendFilePath: true,
-  },
 };
 
 export const LOCALE = {
@@ -25,16 +20,16 @@ export const LOCALE = {
 } as const;
 
 export const LOGO_IMAGE = {
-  enable: false,
+  enable: true,
   svg: true,
-  width: 216,
+  width: 46,
   height: 46,
 };
 
 export const SOCIALS: SocialObjects = [
   {
     name: "Github",
-    href: "https://github.com/satnaing/astro-paper",
+    href: "https://github.com/osmfarid",
     linkTitle: ` ${SITE.title} on Github`,
     active: true,
   },
@@ -42,17 +37,17 @@ export const SOCIALS: SocialObjects = [
     name: "Facebook",
     href: "https://github.com/satnaing/astro-paper",
     linkTitle: `${SITE.title} on Facebook`,
-    active: true,
+    active: false,
   },
   {
     name: "Instagram",
     href: "https://github.com/satnaing/astro-paper",
     linkTitle: `${SITE.title} on Instagram`,
-    active: true,
+    active: false,
   },
   {
     name: "LinkedIn",
-    href: "https://github.com/satnaing/astro-paper",
+    href: "https://www.linkedin.com/in/osmfarid/",
     linkTitle: `${SITE.title} on LinkedIn`,
     active: true,
   },
@@ -153,3 +148,46 @@ export const SOCIALS: SocialObjects = [
     active: false,
   },
 ];
+
+export const defaultFavicons: Favicon[] = [
+  {
+    src: '/favicon/logo-light-32.png',
+    theme: 'light',
+    sizes: '32x32',
+  },
+  {
+    src: '/favicon/logo-light-128.png',
+    theme: 'light',
+    sizes: '128x128',
+  },
+  {
+    src: '/favicon/logo-light-180.png',
+    theme: 'light',
+    sizes: '180x180',
+  },
+  {
+    src: '/favicon/logo-light-192.png',
+    theme: 'light',
+    sizes: '192x192',
+  },
+  {
+    src: '/favicon/logo-dark-32.png',
+    theme: 'dark',
+    sizes: '32x32',
+  },
+  {
+    src: '/favicon/logo-dark-128.png',
+    theme: 'dark',
+    sizes: '128x128',
+  },
+  {
+    src: '/favicon/logo-dark-180.png',
+    theme: 'dark',
+    sizes: '180x180',
+  },
+  {
+    src: '/favicon/logo-dark-192.png',
+    theme: 'dark',
+    sizes: '192x192',
+  },
+]

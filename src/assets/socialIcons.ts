@@ -1,4 +1,6 @@
-const socialIcons = {
+type SocialIcons = Record<string, string>;
+
+const socialIcons: SocialIcons = {
   Github: `<svg
     xmlns="http://www.w3.org/2000/svg"
     class="icon-tabler"

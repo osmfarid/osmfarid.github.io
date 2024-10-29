@@ -12,11 +12,6 @@ export type Site = {
   postPerPage: number;
   scheduledPostMargin: number;
   showArchives?: boolean;
-  editPost?: {
-    url?: URL["href"];
-    text?: string;
-    appendFilePath?: boolean;
-  };
 };
 
 export type SocialObjects = {
@@ -25,3 +20,9 @@ export type SocialObjects = {
   active: boolean;
   linkTitle: string;
 }[];
+
+export type Favicon = {
+  src: string
+  theme?: 'light' | 'dark'
+  sizes?: string
+}

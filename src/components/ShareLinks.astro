@@ -4,36 +4,49 @@ import socialIcons from "@assets/socialIcons";
 
 const URL = Astro.url;
 
-const shareLinks = [
+type ShareLink = {
+  name: string;
+  href: string;
+  linkTitle: string;
+  isEnabled?: boolean;
+};
+
+const shareLinks: ShareLink[] = [
   {
     name: "WhatsApp",
     href: "https://wa.me/?text=",
     linkTitle: `Share this post via WhatsApp`,
+    isEnabled: true,
   },
   {
     name: "Facebook",
     href: "https://www.facebook.com/sharer.php?u=",
     linkTitle: `Share this post on Facebook`,
+    isEnabled: true,
   },
   {
     name: "Twitter",
     href: "https://twitter.com/intent/tweet?url=",
     linkTitle: `Tweet this post`,
+    isEnabled: true,
   },
   {
     name: "Telegram",
     href: "https://t.me/share/url?url=",
     linkTitle: `Share this post via Telegram`,
+    isEnabled: true,
   },
   {
     name: "Pinterest",
     href: "https://pinterest.com/pin/create/button/?url=",
     linkTitle: `Share this post on Pinterest`,
+    isEnabled: false,
   },
   {
     name: "Mail",
     href: "mailto:?subject=See%20this%20post&body=",
     linkTitle: `Share this post via email`,
+    isEnabled: false,
   },
 ] as const;
 ---
@@ -42,7 +55,7 @@ const shareLinks = [
   <span class="italic">Share this post on:</span>
   <div class="text-center">
     {
-      shareLinks.map(social => (
+      shareLinks.filter(social => social.isEnabled).map(social => (
         <LinkButton
           href={`${social.href + URL}`}
           className="link-button"

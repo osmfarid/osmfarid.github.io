@@ -1,7 +1,8 @@
 ---
-import { LOCALE, SITE } from "@config";
+import { defaultFavicons, LOCALE, SITE } from "@config";
 import "@styles/base.css";
 import { ViewTransitions } from "astro:transitions";
+import type { Favicon } from "types";
 
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
@@ -49,6 +50,8 @@ const structuredData = {
     },
   ],
 };
+
+const favicons: Favicon[] = defaultFavicons
 ---
 
 <!doctype html>
@@ -59,7 +62,13 @@ const structuredData = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    {favicons.map(favicon => (
+      <link rel="icon"
+            href={favicon.src}
+            sizes={favicon.sizes}
+            media={favicon.theme && `(prefers-color-scheme: ${favicon.theme})`}
+      />
+  ))}
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
 
