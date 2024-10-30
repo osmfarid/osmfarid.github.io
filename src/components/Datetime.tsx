@@ -56,17 +56,17 @@ const FormattedDatetime = ({ pubDatetime, modDatetime }: DatetimesProps) => {
     return <span>not published</span>;
   }
 
-  const date = new Date(myDatetime).toLocaleDateString(LOCALE.langTag, {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
+  const date = new Intl.DateTimeFormat(LOCALE.langTag, {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  }).format(new Date(myDatetime));
 
-  const time = new Date(myDatetime).toLocaleTimeString(LOCALE.langTag, {
-    hour: "2-digit",
-    minute: "2-digit",
+  const time = new Intl.DateTimeFormat(LOCALE.langTag, {
+    hour: '2-digit',
+    minute: '2-digit',
     hour12: false,
-  });
+  }).format(new Date(myDatetime));
 
   return (
     <>
