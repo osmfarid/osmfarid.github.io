@@ -1,8 +1,8 @@
 import { LOCALE } from "@config";
 
 interface DatetimesProps {
-  pubDatetime: string | Date;
-  modDatetime: string | Date | undefined | null;
+  pubDatetime: Date | null | undefined;
+  modDatetime: Date | null | undefined;
 }
 
 interface Props extends DatetimesProps {
@@ -30,7 +30,7 @@ export default function Datetime({
         <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path>
         <path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path>
       </svg>
-      {modDatetime && modDatetime > pubDatetime ? (
+      {modDatetime && pubDatetime && modDatetime > pubDatetime ? (
         <span className={`italic ${size === "sm" ? "text-sm" : "text-base"}`}>
           Updated:
         </span>
@@ -49,7 +49,7 @@ export default function Datetime({
 
 const FormattedDatetime = ({ pubDatetime, modDatetime }: DatetimesProps) => {
   const myDatetime =
-    (modDatetime && modDatetime > pubDatetime ? modDatetime : pubDatetime) || null;
+  (modDatetime && pubDatetime && modDatetime > pubDatetime ? modDatetime : pubDatetime) ?? null;
 
   if (!myDatetime) {
     return <span>not published</span>;
@@ -61,18 +61,18 @@ const FormattedDatetime = ({ pubDatetime, modDatetime }: DatetimesProps) => {
     day: 'numeric',
   }).format(new Date(myDatetime));
 
-  // const time = new Intl.DateTimeFormat(LOCALE.langTag, {
-  //   hour: '2-digit',
-  //   minute: '2-digit',
-  //   hour12: false,
-  // }).format(new Date(myDatetime));
+  /* const time = new Intl.DateTimeFormat(LOCALE.langTag, {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+  }).format(new Date(myDatetime)); */
 
   return (
     <>
       <time dateTime={new Date(myDatetime).toISOString()}>{date}</time>
-      {/* <span aria-hidden="true"> | </span> */}
-      {/* <span className="sr-only">&nbsp;at&nbsp;</span> */}
-      {/* <span className="text-nowrap">{time}</span> */}
+      {/* <span aria-hidden="true"> | </span>
+      <span className="sr-only">&nbsp;at&nbsp;</span>
+      <span className="text-nowrap">{time}</span> */}
     </>
   );
 };
