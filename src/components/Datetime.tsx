@@ -1,5 +1,4 @@
 import { LOCALE } from "@config";
-import type { CollectionEntry } from "astro:content";
 
 interface DatetimesProps {
   pubDatetime: string | Date;
@@ -62,18 +61,18 @@ const FormattedDatetime = ({ pubDatetime, modDatetime }: DatetimesProps) => {
     day: 'numeric',
   }).format(new Date(myDatetime));
 
-  const time = new Intl.DateTimeFormat(LOCALE.langTag, {
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: false,
-  }).format(new Date(myDatetime));
+  // const time = new Intl.DateTimeFormat(LOCALE.langTag, {
+  //   hour: '2-digit',
+  //   minute: '2-digit',
+  //   hour12: false,
+  // }).format(new Date(myDatetime));
 
   return (
     <>
       <time dateTime={new Date(myDatetime).toISOString()}>{date}</time>
-      <span aria-hidden="true"> | </span>
-      <span className="sr-only">&nbsp;at&nbsp;</span>
-      <span className="text-nowrap">{time}</span>
+      {/* <span aria-hidden="true"> | </span> */}
+      {/* <span className="sr-only">&nbsp;at&nbsp;</span> */}
+      {/* <span className="text-nowrap">{time}</span> */}
     </>
   );
 };
