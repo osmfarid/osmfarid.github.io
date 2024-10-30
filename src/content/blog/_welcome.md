@@ -1,10 +1,8 @@
 ---
-pubDatetime: 2024-10-28T17:39:58.704Z
-modDatetime: 2024-10-29T12:05:34Z
 title: Welcome
 slug: welcome
 featured: false
-draft: false
+draft: true
 description: Testing.
 ---
 

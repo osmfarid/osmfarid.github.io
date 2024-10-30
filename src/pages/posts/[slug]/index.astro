@@ -8,7 +8,9 @@ export interface Props {
 }
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  const posts = await getCollection("blog", ({ data }) => import.meta.env.PROD
+    ? data.draft !== true && data.pubDatetime !== null
+    : true);
 
   const postResult = posts.map(post => ({
     params: { slug: post.slug },

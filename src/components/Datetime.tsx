@@ -49,17 +49,20 @@ export default function Datetime({
 }
 
 const FormattedDatetime = ({ pubDatetime, modDatetime }: DatetimesProps) => {
-  const myDatetime = new Date(
-    modDatetime && modDatetime > pubDatetime ? modDatetime : pubDatetime
-  );
+  const myDatetime =
+    (modDatetime && modDatetime > pubDatetime ? modDatetime : pubDatetime) || null;
 
-  const date = myDatetime.toLocaleDateString(LOCALE.langTag, {
+  if (!myDatetime) {
+    return <span>not published</span>;
+  }
+
+  const date = new Date(myDatetime).toLocaleDateString(LOCALE.langTag, {
     year: "numeric",
     month: "short",
     day: "numeric",
   });
 
-  const time = myDatetime.toLocaleTimeString(LOCALE.langTag, {
+  const time = new Date(myDatetime).toLocaleTimeString(LOCALE.langTag, {
     hour: "2-digit",
     minute: "2-digit",
     hour12: false,
@@ -67,7 +70,7 @@ const FormattedDatetime = ({ pubDatetime, modDatetime }: DatetimesProps) => {
 
   return (
     <>
-      <time dateTime={myDatetime.toISOString()}>{date}</time>
+      <time dateTime={new Date(myDatetime).toISOString()}>{date}</time>
       <span aria-hidden="true"> | </span>
       <span className="sr-only">&nbsp;at&nbsp;</span>
       <span className="text-nowrap">{time}</span>

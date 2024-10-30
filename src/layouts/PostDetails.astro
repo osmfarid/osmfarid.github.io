@@ -21,6 +21,7 @@ const {
   author,
   description,
   ogImage,
+  draft,
   canonicalURL,
   pubDatetime,
   modDatetime,
@@ -76,7 +77,7 @@ const nextPost =
     </button>
   </div>
   <main id="main-content">
-    <h1 transition:name={slugifyStr(title)} class="post-title">{title}</h1>
+    <h1 transition:name={slugifyStr(title)} class="post-title">{title}{draft && <em> (draft)</em>}</h1>
     <Datetime
       pubDatetime={pubDatetime}
       modDatetime={modDatetime}

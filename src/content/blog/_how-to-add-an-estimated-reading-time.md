@@ -2,7 +2,7 @@
 title: How to add an estimated reading time in AstroPaper
 author: Sat Naing
 pubDatetime: 2023-07-21T10:11:06.130Z
-modDatetime: 2024-01-03T14:53:25Z
+modDatetime: 2024-10-30T13:58:25Z
 slug: how-to-add-estimated-reading-time
 featured: false
 draft: false
@@ -143,7 +143,7 @@ export interface Props {
 }
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  const posts = await getCollection("blog", ({ data }) => import.meta.env.PROD ? data.data !== true : true);
 
   const postsWithRT = await getPostsWithRT(posts); // replace reading time logic with this func
 

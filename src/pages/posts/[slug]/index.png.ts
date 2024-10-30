@@ -5,7 +5,9 @@ import { slugifyStr } from "@utils/slugify";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog").then(p =>
-    p.filter(({ data }) => !data.draft && !data.ogImage)
+    p.filter(({ data }) => (import.meta.env.PROD
+      ? data.draft !== true && data.pubDatetime !== null
+      : true) && !data.ogImage)
   );
 
   return posts.map(post => ({
