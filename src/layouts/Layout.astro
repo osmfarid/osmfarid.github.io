@@ -1,5 +1,5 @@
 ---
-import { defaultFavicons, LOCALE, SITE } from "@config";
+import { LOCALE, SITE } from "@config";
 import "@styles/base.css";
 import { ViewTransitions } from "astro:transitions";
 import type { Favicon } from "types";
@@ -51,7 +51,7 @@ const structuredData = {
   ],
 };
 
-const favicons: Favicon[] = defaultFavicons
+const ogType = pubDatetime ? "article" : "website";
 ---
 
 <!doctype html>
@@ -62,18 +62,11 @@ const favicons: Favicon[] = defaultFavicons
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <!-- {favicons.map(favicon => (
-      <link rel="icon"
-            href={favicon.src}
-            sizes={favicon.sizes}
-            media={favicon.theme && `(prefers-color-scheme: ${favicon.theme})`}
-      />
-  ))} -->
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
 
@@ -89,6 +82,8 @@ const favicons: Favicon[] = defaultFavicons
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:image" content={socialImageURL} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:logo" content="/favicon-96x96.png" />
 
     <!-- Article Published/Modified time -->
     {
