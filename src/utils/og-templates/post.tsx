@@ -7,7 +7,7 @@ export default async (post: CollectionEntry<"blog">) => {
   return satori(
     <div
       style={{
-        background: "#fefbfb",
+        background: "rgb(37, 12, 49)",
         width: "100%",
         height: "100%",
         display: "flex",
@@ -20,8 +20,8 @@ export default async (post: CollectionEntry<"blog">) => {
           position: "absolute",
           top: "-1px",
           right: "-1px",
-          border: "4px solid #000",
-          background: "#ecebeb",
+          border: "4px solid rgb(255, 99, 133)",
+          background: "#36233E",
           opacity: "0.9",
           borderRadius: "4px",
           display: "flex",
@@ -34,8 +34,8 @@ export default async (post: CollectionEntry<"blog">) => {
 
       <div
         style={{
-          border: "4px solid #000",
-          background: "#fefbfb",
+          border: "4px solid rgb(255, 99, 133)",
+          background: "#321042",
           borderRadius: "4px",
           display: "flex",
           justifyContent: "center",
@@ -60,6 +60,7 @@ export default async (post: CollectionEntry<"blog">) => {
               fontWeight: "bold",
               maxHeight: "84%",
               overflow: "hidden",
+              color:"rgb(255, 99, 133)"
             }}
           >
             {post.data.title}
@@ -73,7 +74,7 @@ export default async (post: CollectionEntry<"blog">) => {
               fontSize: 28,
             }}
           >
-            <span>
+            <span style={{ color:"rgb(255, 51, 95)" }}>
               by{" "}
               <span
                 style={{
@@ -87,7 +88,7 @@ export default async (post: CollectionEntry<"blog">) => {
               </span>
             </span>
 
-            <span style={{ overflow: "hidden", fontWeight: "bold" }}>
+            <span style={{ overflow: "hidden", fontWeight: "bold", color:"rgb(255, 51, 95)" }}>
               {SITE.title}
             </span>
           </div>

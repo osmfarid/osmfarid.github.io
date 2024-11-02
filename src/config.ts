@@ -6,7 +6,7 @@ export const SITE: Site = {
   profile: "https://github.com/osmfarid/",
   desc: "My Angular developers notebook",
   title: "osmfarid's blog",
-  ogImage: "default-og.png",
+  // ogImage: "default-og.png",
   lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 5,

@@ -6,7 +6,7 @@ export default async () => {
   return satori(
     <div
       style={{
-        background: "#fefbfb",
+        background: "rgb(37, 12, 49)",
         width: "100%",
         height: "100%",
         display: "flex",
@@ -19,8 +19,8 @@ export default async () => {
           position: "absolute",
           top: "-1px",
           right: "-1px",
-          border: "4px solid #000",
-          background: "#ecebeb",
+          border: "4px solid rgb(255, 99, 133)",
+          background: "#36233E",
           opacity: "0.9",
           borderRadius: "4px",
           display: "flex",
@@ -33,8 +33,8 @@ export default async () => {
 
       <div
         style={{
-          border: "4px solid #000",
-          background: "#fefbfb",
+          border: "4px solid rgb(255, 99, 133)",
+          background: "#321042",
           borderRadius: "4px",
           display: "flex",
           justifyContent: "center",
@@ -65,8 +65,8 @@ export default async () => {
               textAlign: "center",
             }}
           >
-            <p style={{ fontSize: 72, fontWeight: "bold" }}>{SITE.title}</p>
-            <p style={{ fontSize: 28 }}>{SITE.desc}</p>
+            <p style={{ fontSize: 72, fontWeight: "bold", color:"rgb(255, 99, 133)" }}>{SITE.title}</p>
+            <p style={{ fontSize: 28, color:"rgb(255, 99, 133)" }}>{SITE.desc}</p>
           </div>
 
           <div
@@ -78,7 +78,7 @@ export default async () => {
               fontSize: 28,
             }}
           >
-            <span style={{ overflow: "hidden", fontWeight: "bold" }}>
+            <span style={{ overflow: "hidden", fontWeight: "bold", color:"rgb(255, 99, 133)" }}>
               {new URL(SITE.website).hostname}
             </span>
           </div>
