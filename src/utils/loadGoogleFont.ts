@@ -11,7 +11,7 @@ async function loadGoogleFont(
   font: string,
   text: string
 ): Promise<ArrayBuffer> {
-  const API = `https://fonts.googleapis.com/css2?family=${font}&text=${encodeURIComponent(text)}`;
+  const API = `https://fonts.googleapis.com/css2?family=${font}&text=${encodeURIComponent(text+"+'\u00A0'")}`;
 
   const css = await (
     await fetch(API, {
@@ -45,14 +45,14 @@ async function loadGoogleFonts(
 > {
   const fontsConfig = [
     {
-      name: "IBM Plex Mono",
-      font: "IBM+Plex+Mono",
+      name: "DM Sans",
+      font: "DM+Sans:opsz,wght@9..40,400&display=swap",
       weight: 400,
       style: "normal",
     },
     {
-      name: "IBM Plex Mono",
-      font: "IBM+Plex+Mono:wght@700",
+      name: "DM Sans",
+      font: "DM+Sans:opsz,wght@9..40,700&display=swap",
       weight: 700,
       style: "bold",
     },
