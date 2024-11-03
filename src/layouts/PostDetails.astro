@@ -77,7 +77,8 @@ const nextPost =
     </button>
   </div>
   <main id="main-content">
-    <h1 transition:name={slugifyStr(title)} class="post-title">{title}{draft && <em> (draft)</em>}</h1>
+    <!-- transition:name={slugifyStr(title)} -->
+    <h1  class="post-title">{title}{draft && <em> (draft)</em>}</h1>
     <Datetime
       pubDatetime={pubDatetime}
       modDatetime={modDatetime}

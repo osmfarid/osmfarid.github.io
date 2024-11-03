@@ -12,9 +12,10 @@ const { tag, size = "sm" } = Astro.props;
     size === "sm" ? "my-1 underline-offset-4" : "my-3 mx-1 underline-offset-8"
   }`}
 >
+<!-- transition:name={tag} -->
+
   <a
     href={`/tags/${tag}/`}
-    transition:name={tag}
     class={`${size === "sm" ? "text-sm" : "text-lg"} pr-2 group`}
   >
     <svg
