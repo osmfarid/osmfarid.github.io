@@ -32,7 +32,7 @@ export default defineConfig({
     rehypePlugins: [rehypeKatex],
     shikiConfig: {
       // For more themes, visit https://shiki.style/themes
-      themes: { light: "min-light", dark: "night-owl" },
+      themes: { light: "slack-ochin", dark: "laserwave" },
       wrap: true,
     },
   },

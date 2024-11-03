@@ -43,7 +43,7 @@ async function loadGoogleFonts(
 ): Promise<
   Array<{ name: string; data: ArrayBuffer; weight: number; style: string }>
 > {
-  const fontsConfig = [
+  const DM_SANS = [
     {
       name: "DM Sans",
       font: "DM+Sans:opsz,wght@9..40,400&display=swap",
@@ -58,8 +58,28 @@ async function loadGoogleFonts(
     },
   ];
 
+  const SPACE_GROTESK = [
+    {
+      name: "Space Grotesk",
+      font: "Space+Grotesk&display=swap",
+      weight: 400,
+      style: "normal",
+    },
+    {
+      name: "Space Grotesk",
+      font: "Space+Grotesk:wght@700&display=swap",
+      weight: 700,
+      style: "bold",
+    },
+  ];
+
+  const fontsConfig = {
+    DM_SANS,
+    SPACE_GROTESK,
+  }
+
   const fonts = await Promise.all(
-    fontsConfig.map(async ({ name, font, weight, style }) => {
+    fontsConfig.DM_SANS.map(async ({ name, font, weight, style }) => {
       const data = await loadGoogleFont(font, text);
       return { name, data, weight, style };
     })
