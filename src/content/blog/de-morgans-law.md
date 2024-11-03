@@ -6,8 +6,6 @@ tags:
   - boolean-algebra
 description: Simplify logical expressions in TypeScript using De Morgan's laws.
 ---
-# De Morgan's Laws in TypeScript
-
 De Morgan's laws are fundamental in logic and set theory, providing equivalences that are very helpful when working with conditions in code. In TypeScript (or any other programming language), they can be used to simplify boolean expressions, making your code cleaner and easier to understand.
 
 ## Table of contents

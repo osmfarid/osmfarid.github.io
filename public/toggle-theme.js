@@ -49,7 +49,8 @@ function reflectPreference() {
 // set early so no page flashes / CSS is made aware
 reflectPreference();
 
-window.onload = () => {
+// Use astro:page-load event
+document.addEventListener("astro:page-load", () => {
   function setThemeFeature() {
     // set on load so screen readers can get the latest value on the button
     reflectPreference();
@@ -65,7 +66,7 @@ window.onload = () => {
 
   // Runs on view transitions navigation
   document.addEventListener("astro:after-swap", setThemeFeature);
-};
+});
 
 // sync with system changes
 window
