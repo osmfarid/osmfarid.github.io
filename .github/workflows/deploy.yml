@@ -14,10 +14,11 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ secrets.PUBLIC_GOOGLE_SITE_VERIFICATION }}
+
 jobs:
   build:
-    env:
-        PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ secrets.PUBLIC_GOOGLE_SITE_VERIFICATION }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
