@@ -75,7 +75,7 @@ if (!isUserLoggedIn && !hasPermission) {
 This makes the intent more explicit:  
 both conditions must be false for the message to be logged.
 
-## Summary
+## In simple words...
 
 De Morgan's laws are a powerful tool to simplify logical expressions.  
 They help make your conditions more readable.
