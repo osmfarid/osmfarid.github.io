@@ -1,7 +1,7 @@
 import type { Favicon, Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
-  website: "https://osmfarid.github.io//", // replace this with your deployed domain
+  website: "https://osmfarid.github.io/", // replace this with your deployed domain
   author: "osmfarid",
   profile: "https://github.com/osmfarid/",
   desc: "Frontend Adventures from My Developer Journey",
