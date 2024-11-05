@@ -1,10 +1,7 @@
 ---
 layout: ../layouts/AboutLayout.astro
-title: "Hey there! ✨"
+title: "Hey there, I'm Farid! ✨"
 ---
-
-## I'm Farid, a front-end developer coding away in beautiful Baku! 🇦🇿
-
 Welcome to my personal development blog/diary/notebook (call it what you like)! After countless browser tabs filled with Medium articles, Stack Overflow answers, and YouTube tutorials, I decided to create a central hub for my learnings and experiences.
 
 Currently working at [R.I.S.K. Company](https://risk.az/products/panda), on a project focused on bringing aeronautical data to life on maps using powerful tools like OpenLayers and Cesium, I'll document my explorations, challenges, and triumphs as I navigate the world of geospatial visualization.

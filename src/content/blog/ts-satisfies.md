@@ -1,13 +1,11 @@
 ---
-title: "Using satisfies in TypeScript: A Step-by-Step Example"
+title: "Using \"satisfies\" in TypeScript: A Step-by-Step Example"
 pubDatetime: 2024-11-05T10:54:31Z
 draft: false
 tags:
   - typescript
 description: Improve TypeScript safety using satisfies, keyof typeof, and Record.
 ---
-# Using `satisfies` in TypeScript: A Step-by-Step Example
-
 Today, I want to share an interesting example of using the `satisfies` operator in TypeScript. We will go through the evolution of a code example to see how we can type objects in a safer and more convenient way.
 
 ## Table of contents
