@@ -3,11 +3,9 @@ import { LOGO_IMAGE, SITE } from "@config";
 import Hr from "./Hr.astro";
 import LinkButton from "./LinkButton.astro";
 
-export interface Props {
-  activeNav?: "posts" | "archives" | "tags" | "about" | "search";
-}
-
-const { activeNav } = Astro.props;
+type Paths = "posts" | "archives" | "tags" | "about" | "search" | null
+const currentUrlPath = Astro.url.pathname.replace(/\/+$/, "");
+const currentLocation = (currentUrlPath.split("/").slice(1)[0] ?? null) as Paths;
 ---
 
 <header>
@@ -56,17 +54,17 @@ const { activeNav } = Astro.props;
         </button>
         <ul id="menu-items" class="display-none sm:flex">
           <li>
-            <a href="/posts/" class={activeNav === "posts" ? "active" : ""}>
+            <a href="/posts/" class={currentLocation === "posts" ? "active" : ""}>
               Posts
             </a>
           </li>
           <li>
-            <a href="/tags/" class={activeNav === "tags" ? "active" : ""}>
+            <a href="/tags/" class={currentLocation === "tags" ? "active" : ""}>
               Tags
             </a>
           </li>
           <li>
-            <a href="/about/" class={activeNav === "about" ? "active" : ""}>
+            <a href="/about/" class={currentLocation === "about" ? "active" : ""}>
               About
             </a>
           </li>
@@ -83,7 +81,7 @@ const { activeNav } = Astro.props;
                     xmlns="http://www.w3.org/2000/svg"
                     class:list={[
                       "icon icon-tabler icons-tabler-outline !hidden sm:!inline-block",
-                      activeNav === "archives" && "!stroke-skin-accent",
+                      currentLocation === "archives" && "!stroke-skin-accent",
                     ]}
                   >
                     <>
@@ -96,7 +94,7 @@ const { activeNav } = Astro.props;
                   <span
                     class:list={[
                       "sm:sr-only",
-                      activeNav === "archives" && "active",
+                      currentLocation === "archives" && "active",
                     ]}
                   >
                     Archives
@@ -109,7 +107,7 @@ const { activeNav } = Astro.props;
             <LinkButton
               href="/search/"
               className={`focus-outline p-3 sm:p-1 ${
-                activeNav === "search" ? "active" : ""
+                currentLocation === "search" ? "active" : ""
               } flex`}
               ariaLabel="search"
               title="Search"

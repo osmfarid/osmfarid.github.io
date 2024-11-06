@@ -1,4 +1,5 @@
 ---
+import Header from "@components/Header.astro";
 import { LOCALE, SITE } from "@config";
 import "@styles/base.css";
 import { ViewTransitions } from "astro:transitions";
@@ -160,6 +161,7 @@ const ogType = pubDatetime ? "article" : "website";
         async src="//gc.zgo.at/count.js"></script>
   </head>
   <body>
+    <Header/>
     <slot />
   </body>
 </html>
