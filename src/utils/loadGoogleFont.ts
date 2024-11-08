@@ -11,7 +11,7 @@ async function loadGoogleFont(
   font: string,
   text: string
 ): Promise<ArrayBuffer> {
-  const API = `https://fonts.googleapis.com/css2?family=${font}&text=${encodeURIComponent(text+"+'\u00A0'")}`;
+  const API = `https://fonts.googleapis.com/css2?family=${font}&text=${encodeURIComponent(text)}`;
 
   const css = await (
     await fetch(API, {
