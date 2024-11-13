@@ -7,15 +7,14 @@ import { SITE } from "./src/config";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
 
+import mdx from "@astrojs/mdx";
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
-  integrations: [
-    tailwind({
-      applyBaseStyles: false,
-    }),
-    sitemap(),
-  ],
+  integrations: [tailwind({
+    applyBaseStyles: false,
+  }), sitemap(), mdx()],
   markdown: {
     remarkPlugins: [
       remarkMath,
