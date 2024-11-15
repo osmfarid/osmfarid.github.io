@@ -1,0 +1,57 @@
+---
+title: "Conditional Object Properties in TypeScript"
+pubDatetime: 2024-11-15T07:13:08.029Z
+# modDatetime: 2024-11-13T17:26:14.661Z
+draft: false
+tags:
+  - typescript
+description: "The spread operator: a sleek, elegant way to craft objects dynamically."
+---
+When writing TypeScript code, we often encounter situations where object properties need to be added based on a certain condition. In this article, I'll show two approaches to achieve this — using a simple `if` statement and using the spread operator (`...`).
+
+## Table of contents
+
+## Simple Approach with `if`
+
+Let's assume we have an object that we are building based on various conditions. A classic way to add properties is to use an `if` statement.
+
+```typescript
+let user = {
+  name: "Farid",
+};
+
+const isAdmin = true;
+
+if (isAdmin) {
+  user.role = "admin";
+}
+
+console.log(user); // { name: 'Farid', role: 'admin' }
+```
+
+In this example, if the `isAdmin` condition is true, we add the `role` property to the `user` object. This approach works, but it may become cumbersome when dealing with many objects and conditions.
+
+## Using the Spread Operator (`...`)
+
+The spread operator allows us to make the code more concise and expressive. In the following example, we use it for conditional property addition.
+
+```typescript
+const isAdmin = true;
+
+const user = {
+  name: "Farid",
+  ...(isAdmin && { role: "admin" }),
+};
+
+console.log(user); // { name: 'Farid', role: 'admin' }
+```
+
+Here's what happens: if `isAdmin` is true, the expression `...(isAdmin && { role: "admin" })` returns the object `{ role: "admin" }`, which is then spread into the main `user` object. If `isAdmin` is false, the `&&` operator returns `false`, and nothing is added.
+
+This method is not only more concise but also easier to read, especially when adding multiple properties based on different conditions.
+
+## In Simple Words...
+
+Both approaches have their advantages and can be used depending on the specific task. Using `if` may be more understandable for those who are just starting with TypeScript, but the spread operator makes the code more compact and readable.
+
+Next time you need to add properties to an object, consider which of these methods will suit you better!
