@@ -50,7 +50,7 @@ const dateFormatted = myDatetime
   <span class={`italic ${size === "sm" ? "text-sm" : "text-base"}`}>
     {myDatetime ? (
       <>
-        <time dateTime={new Date(myDatetime).toISOString()}>{dateFormatted}</time>
+        <time datetime={new Date(myDatetime).toISOString()}>{dateFormatted}</time>
         {/* <span aria-hidden="true"> | </span>
         <span class="sr-only">&nbsp;at&nbsp;</span>
         <span class="text-nowrap">{timeFormatted}</span> */}
